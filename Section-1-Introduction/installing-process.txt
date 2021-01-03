@@ -1,0 +1,19 @@
+1. Go to https://nodejs.org/en/
+2. Go to https://www.typescriptlang.org/ and down is You can install TypeScript via npm
+3. npm install -g typescript  : -g means global, run typescript compiler anywhere in our terminal
+4. tsc -help
+
+5. create some .ts file with code
+6. tsc --target es5 ...\example-code\hello-world.ts
+7. Compiler Options : https://www.typescriptlang.org/docs/handbook/compiler-options-in-msbuild.html
+8. we have new javascript file Section-1-Introduction\example-code\hello-world.js
+9. create tsconfig.json
+9.1. include -> what have to be compiled
+9.2. ** means any subfolders , * means any file name .ts
+10. outDir : specify the folder, where I would like to store our compiled files
+
+11. run with any parameters, it will compile with parameters defined in tsconfig.json : tsc
+
+12. we don't always have to use global typescript compiler, we can install typescript in any folder locally : npm i typescript
+13. it makes available the local compiler bin:  Section-1-Introduction\example-code\node_modules\.bin\
+14. to run local compiler: ./node_modules/.bin/tsc  or   npx tsc
