@@ -1,8 +1,10 @@
-function multiply(a: number, b: number): number {
-    return a * b;
-}
+import myMultiply, { multiplyByTwo, IHelloWorld} from "./Modules/multiply";
 
-const a: number = 30;
+// we can import all as namespace
+// import * as multiplyModule from "./Modules/multiply.js"
+
+const a: number = 40;
 const b: number = 3;
 
-console.log(`${a} * ${b} = `, multiply(a,b));
+console.log(`${a} * ${b} = `, myMultiply(a,b));
+console.log(`${a} * 2 = `, multiplyByTwo(a));
