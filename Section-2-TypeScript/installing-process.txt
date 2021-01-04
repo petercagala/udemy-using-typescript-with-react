@@ -1,0 +1,26 @@
+1. create package.json : npm init
+2. install typescript in development dependency, because we want to use it in production (compiled javascript): npm i -D typescript
+3. create tsconfig.json : npx tsc --init
+4. improve tsconfig.json: what should be compiled "include": ["src/**/*"] , where it should be compiled: "outDir": "dist",
+5. compile typescript code to javascript code: npx tsc
+6. create build script in package.json :
+"scripts": {
+    "build": "tsc"
+  },
+
+7. run script: npm run build
+8. let's test, and run compiled code by node: node dist/index.js
+9. run compiler in watch mode: npx tsc -w (watch mode spusti najlepsie v konzole idea)
+
+10. install nodemon : npm i -D nodemon -> it will  node dist/index.js process
+11. use nodemon: npx nodemon dist/index.js (nodemon spusti najlepsie v  run konfiguration, alebo v nejakej konzole)
+12. we can use nodemon in watch mode: npx nodemon -w dist dist/index.js  (watchuje dist a pri akejkolvek zmene v dist spusta index.js)
+13. we can run nodemon in quiet mode (without all remaining messages): npx nodemon -w dist -q dist/index.js
+
+14. finally, we have to compile and node run together: npm i -D concurrently
+15. let's run both processes concurrently: npx concurrently "tsc -w" "nodemon -w dist -q dist/index.js"
+16. we can differ this 2 processes by colour: npx concurrently -n COMPILER, NODEMON -c yellow, blue "tsc -w" "nodemon -w dist -q dist/index.js"
+17. when one process faild, we have to killed the other: npx concurrently -k -n COMPILER,NODEMON -c yellow,blue "tsc -w" "nodemon -w dist -q dist/index.js"
+
+18. let's save this script as command dev in package.json: "dev": "concurrently -k -n COMPILER,NODEMON -c yellow,blue \"tsc -w\" \"nodemon -w dist -q dist/index.js\""
+19. run it: npm run dev
