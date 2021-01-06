@@ -1,5 +1,6 @@
 import myMultiply, { multiplyByTwo, IHelloWorld} from "./Modules/multiply";
 import {IIndexSignatureInterface1, IIndexSignatureInterface2, ISum} from "./Interfaces";
+import {calculationArea, sumEverything, sumFunction2_2, sumFunction2_3} from "./Functions";
 
 // we can import all as namespace
 // import * as multiplyModule from "./Modules/multiply.js"
@@ -60,3 +61,11 @@ const callSignature1: ISum = {
 console.log("indexSignature2.property1.car:", indexSignature2.property1.car);
 console.log("indexSignature2.property2.car:", indexSignature2.property2.car);
 console.log("callSignature1.sumCalculate(1,2)", callSignature1.sumCalculate(1,2));
+
+// Functions
+console.log("sumFunction2_2(2,3)", sumFunction2_2(2,3));
+console.log("sumFunction2_2(2)", sumFunction2_2(2));
+console.log("sumFunction2_3(2)", sumFunction2_3(2));
+console.log("sumEverything(1,2,2,3):  ", sumEverything(1,2,2,3));
+console.log("calculationArea(3) : ", calculationArea(3))
+console.log("calculationArea(3,4) : ", calculationArea(3, 4))
