@@ -2,6 +2,9 @@ import myMultiply, { multiplyByTwo, IHelloWorld} from "./Modules/multiply";
 import {IIndexSignatureInterface1, IIndexSignatureInterface2, ISum} from "./Interfaces";
 import {calculationArea, sumEverything, sumFunction2_2, sumFunction2_3} from "./Functions";
 import {FlyingRobot, Robot} from "./Classes";
+import {calculateTotalAmount, IOrder} from "./ImplementingInterfaces/calculate-total-amount";
+import {ShoppingCart} from "./ImplementingInterfaces/shopping-cart";
+import {Order} from "./ImplementingInterfaces/order";
 
 // we can import all as namespace
 // import * as multiplyModule from "./Modules/multiply.js"
@@ -83,5 +86,13 @@ flyingRobot.name = "Katka";
 flyingRobot.askName();
 flyingRobot.move(14);
 console.log(`Color of ${flyingRobot.name} is ${flyingRobot.color}`)
-flyingRobot.color  = "red";
+flyingRobot.color  = "green";
 console.log(`Robot ${flyingRobot.name} has ${flyingRobot.color} color!!!`)
+
+console.log("******************************************************************")
+console.log("******************************************************************")
+// ImplementingInterfaces
+const shoppingCart: IOrder = new ShoppingCart();
+const order: IOrder = new Order();
+console.log(`ShoppingCart total: ${calculateTotalAmount(shoppingCart)}`);
+console.log(`Order total: ${calculateTotalAmount(order)}`);
