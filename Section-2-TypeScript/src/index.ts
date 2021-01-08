@@ -1,6 +1,7 @@
 import myMultiply, { multiplyByTwo, IHelloWorld} from "./Modules/multiply";
 import {IIndexSignatureInterface1, IIndexSignatureInterface2, ISum} from "./Interfaces";
 import {calculationArea, sumEverything, sumFunction2_2, sumFunction2_3} from "./Functions";
+import {FlyingRobot, Robot} from "./Classes";
 
 // we can import all as namespace
 // import * as multiplyModule from "./Modules/multiply.js"
@@ -69,3 +70,18 @@ console.log("sumFunction2_3(2)", sumFunction2_3(2));
 console.log("sumEverything(1,2,2,3):  ", sumEverything(1,2,2,3));
 console.log("calculationArea(3) : ", calculationArea(3))
 console.log("calculationArea(3,4) : ", calculationArea(3, 4))
+console.log("******************************************************************")
+console.log("******************************************************************")
+
+// Classes
+const robot = new Robot("Peter");
+robot.askName();
+robot.move(12);
+
+const flyingRobot = new FlyingRobot("Karol", 100);
+flyingRobot.name = "Katka";
+flyingRobot.askName();
+flyingRobot.move(14);
+console.log(`Color of ${flyingRobot.name} is ${flyingRobot.color}`)
+flyingRobot.color  = "red";
+console.log(`Robot ${flyingRobot.name} has ${flyingRobot.color} color!!!`)
