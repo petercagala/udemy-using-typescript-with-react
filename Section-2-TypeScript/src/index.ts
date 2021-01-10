@@ -5,6 +5,7 @@ import {FlyingRobot, Robot} from "./Classes";
 import {calculateTotalAmount, IOrder} from "./ImplementingInterfaces/calculate-total-amount";
 import {ShoppingCart} from "./ImplementingInterfaces/shopping-cart";
 import {Order} from "./ImplementingInterfaces/order";
+import {Cat, Dog, IAnimal, initializeAnimal} from "./DescribingClassesUsingInterfaces";
 
 // we can import all as namespace
 // import * as multiplyModule from "./Modules/multiply.js"
@@ -96,3 +97,11 @@ const shoppingCart: IOrder = new ShoppingCart();
 const order: IOrder = new Order();
 console.log(`ShoppingCart total: ${calculateTotalAmount(shoppingCart)}`);
 console.log(`Order total: ${calculateTotalAmount(order)}`);
+
+console.log("******************************************************************")
+console.log("******************************************************************")
+// DescribingClassesUsingInterfaces
+const cat1 = initializeAnimal(Cat, "myCat1");
+const dog1 = initializeAnimal(Dog, "myDog1");
+
+dog1.bark(); // it works, if we use generic initializeAnimal
