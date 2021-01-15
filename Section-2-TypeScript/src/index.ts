@@ -5,7 +5,7 @@ import {FlyingRobot, Robot} from "./Classes";
 import {calculateTotalAmount, IOrder} from "./ImplementingInterfaces/calculate-total-amount";
 import {ShoppingCart} from "./ImplementingInterfaces/shopping-cart";
 import {Order} from "./ImplementingInterfaces/order";
-import {Cat, Dog, IAnimal, initializeAnimal} from "./DescribingClassesUsingInterfaces";
+import {Cat, Dog, IAnimal, initializeAnimal} from "./DescribingClassesUsingInterfaces/indexTheory";
 
 // we can import all as namespace
 // import * as multiplyModule from "./Modules/multiply.js"
@@ -105,3 +105,8 @@ const cat1 = initializeAnimal(Cat, "myCat1");
 const dog1 = initializeAnimal(Dog, "myDog1");
 
 dog1.bark(); // it works, if we use generic initializeAnimal
+
+console.log("******************************************************************")
+console.log("******************************************************************")
+// Generics
+
