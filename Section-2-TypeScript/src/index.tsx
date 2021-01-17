@@ -6,6 +6,9 @@ import {calculateTotalAmount, IOrder} from "./ImplementingInterfaces/calculate-t
 import {ShoppingCart} from "./ImplementingInterfaces/shopping-cart";
 import {Order} from "./ImplementingInterfaces/order";
 import {Cat, Dog, IAnimal, initializeAnimal} from "./DescribingClassesUsingInterfaces/indexTheory";
+import {renderToString} from "react-dom/server";
+import React from "react";
+import {MyComponent} from "./DeclarationMerging/reactNameSpace";
 
 // we can import all as namespace
 // import * as multiplyModule from "./Modules/multiply.js"
@@ -110,3 +113,7 @@ console.log("******************************************************************"
 console.log("******************************************************************")
 // Generics
 
+console.log("******************************************************************")
+console.log("******************************************************************")
+// NameSpaces
+console.log(renderToString(<MyComponent/>));
