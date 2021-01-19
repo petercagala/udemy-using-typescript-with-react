@@ -117,3 +117,20 @@ console.log("******************************************************************"
 console.log("******************************************************************")
 // NameSpaces
 console.log(renderToString(<MyComponent/>));
+
+console.log("******************************************************************")
+console.log("******************************************************************")
+// UtilityTypes
+const myObject2: MyObject & ThisType<MyObjectThis> = {
+    sayHello(): string {
+        return this.helloWorld();
+    }
+}
+
+myObject2.sayHello = myObject2.sayHello.bind({
+    helloWorld(): string {
+        return "Hello World";
+    }
+});
+
+console.log("myObject2.sayHello()", myObject2.sayHello());
