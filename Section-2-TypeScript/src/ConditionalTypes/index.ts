@@ -2,15 +2,15 @@
 type SomeType = number;
 type ConditionalType = SomeType extends string ? string : null;
 
-function someFunction<T>(param: T): (someArg: T extends boolean ? 'TypeA' : 'TypeB') => void {
+function someFunction2<T>(param: T): (someArg: T extends boolean ? 'TypeA' : 'TypeB') => void {
     const someOtherFunction = (someArg: T extends boolean ? 'TypeA' : 'TypeB'): void => {
         const a: 'TypeA' | 'TypeB' = someArg;
     };
     return someOtherFunction;
 }
 
-someFunction(true)("TypeA");
-someFunction(3)("TypeB");
+someFunction2(true)("TypeA");
+someFunction2(3)("TypeB");
 
 // **********************************************************
 // never is type, which never happen
