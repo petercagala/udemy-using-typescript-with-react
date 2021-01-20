@@ -36,3 +36,16 @@ const myObject3: MyMappedType2<IMappedType2> = {
     myProperty1: true,
     myProperty2: "Katka",
 };
+
+// ************************************
+// alebo pouzi standardnu kniznicu Read
+// /**
+//  * Make all properties in T Readonly
+//  */
+// type Readonly<T> = {
+//     readonly [P in keyof T]: T[P];
+// };
+const myObject4: Readonly<IMappedType2> = {
+    myProperty1: true,
+    myProperty2: "Katka",
+};
