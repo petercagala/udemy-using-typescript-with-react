@@ -32,3 +32,15 @@ type ResultType = Exclude<'a'| 'b'| 'c' | 'd', 'a' | 'b'>;
 
 type MyType1<T> = T extends number | string ? T : never;
 type MyResults1 = MyType1<number | string | boolean>;
+
+// **************************************
+type InferSomething1<T> = T extends infer U ? U : any;
+type Infer1 = InferSomething1<"EDocumentType.Download">;
+
+type InferSomething2<T> = T extends {a: infer A; b: infer B} ? A & B : any;
+type Infer2 = InferSomething2<{a : {someAProp: 1}, b: {someBProp: "bPropValue"}}>;
+const myInferObject: Infer2 = {someAProp: 1, someBProp: "bPropValue"};
+
+
+
+
