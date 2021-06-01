@@ -10,3 +10,16 @@
 6. try to create index.html file directly in dist folder. In body, try to call <script src="main.js"></script>.
  Open index.html in browser
 7. Let's move index.html from dist folder to src folder
+8. To be able create additional file in dist folder also for index.html, we need html-webpack-plugin: npm i -D html-webpack-plugin
+9. we need to initialize html-webpack-plugin by new webpack.config.js (webpack plugin will inject main.js to indexPetko.html automatically)
+10. npm run build
+11. we want to use webpack-dev-server for automatically build files in src folder and check the changes in dist folder
+12. npm i -D webpack-dev-server
+13. create start script for webpack-dev-server
+    "start": "webpack-dev-server --open --mode development" // zbuildovane subory sa uz ale neukladaju do dist,
+                // !!! pozor, v webpack.config.js radsej neuvadzaj filename, aj tak by musel byt len index.html, lebo s inym webpack-dev-server
+                // si nerozumie
+            --open webpack will open our browser for us
+14. npm start
+15. url: localhost:8080 or 127.0.0.1
+16. CTRL + C : stop server
