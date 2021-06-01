@@ -1,0 +1,15 @@
+{
+  "name": "section-3-typescript-with-react",
+  "version": "1.0.0",
+  "description": "xxx",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  }
+}

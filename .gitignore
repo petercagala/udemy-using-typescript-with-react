@@ -19,7 +19,7 @@
 /**/package-lock.json
 
 #TypeScript
-*.js
+#*.js
 
 # Package Files #
 *.jar
