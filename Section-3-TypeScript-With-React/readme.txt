@@ -21,5 +21,5 @@
                 // si nerozumie
             --open webpack will open our browser for us
 14. npm start
-15. url: localhost:8080 or 127.0.0.1
+15. url: localhost:8080 or 127.0.0.1:8080
 16. CTRL + C : stop server
