@@ -23,3 +23,5 @@
 14. npm start
 15. url: localhost:8080 or 127.0.0.1:8080
 16. CTRL + C : stop server
+
+17. npm i -D typescript ts-loader
