@@ -25,3 +25,15 @@
 16. CTRL + C : stop server
 
 17. npm i -D typescript ts-loader
+18. create tsconfig.json and then refactor .js -> .ts
+19. modify webpack.config.js : we have to inform, that now, we do not have the default index.js, but index.ts
+        entry: "./src/index.ts", // as we do not have the default index.js in entry, but index.ts
+        resolve: {
+            extensions: [".js", ".ts", ".tsx"],
+        }, // these extensions as accepted
+        module: {
+            rules: [{
+                test: /\.tsx?$/,    // we test file names on regular expressions, we accept .ts, .tsx
+                loader: "ts-loader", // on these accepted files, we apply ts-loader
+            }],
+        },
