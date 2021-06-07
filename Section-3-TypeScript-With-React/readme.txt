@@ -35,5 +35,6 @@
             rules: [{
                 test: /\.tsx?$/,    // we test file names on regular expressions, we accept .ts, .tsx
                 loader: "ts-loader", // on these accepted files, we apply ts-loader
+                exclude: /node_modules/, // ts-loader applyied only on source code
             }],
         },
