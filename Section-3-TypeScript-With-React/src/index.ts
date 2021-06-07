@@ -1,3 +1,8 @@
+class A {
+    textShow: string = "Hello World Katka";
+}
+
 alert("Hello World Peter");
 
-console.log("Hello World Katka!")
+console.log(new A().textShow);
+

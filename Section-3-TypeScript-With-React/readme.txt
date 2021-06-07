@@ -38,3 +38,21 @@
                 exclude: /node_modules/, // ts-loader applyied only on source code
             }],
         },
+20. setting babel-loader in webpack.config.json: na zaklade prehliadaca nastavi spravnu transformaciu javascriptu na konkretnu verziu
+21. npm i -D
+@babel/core
+@babel/preset-env: prepare our code for the environment and concrete browser
+@babel/preset-typescript: babel remuve the typescript code
+22. create .babelrc :
+{
+  "presets": ["@babel/preset-env", "@babel/preset-typescript"] // polozky pola berie v opacnom poradi
+  teda najskor odstrai z kodu typescript a potom upravi javascript kod pre verziu konkretneho prehliadaca
+}
+23. npm i -D babel-loader :
+24. webpack.config.json : replace ts-loader to babel-loader
+24. babel currently does not understand for example class syntax
+25. npm i -D @babel/plugin-proposal-class-properties
+26. improve tsconfig.json:
+         "include": ["./src/**/*"], // chcem kompilovat vsetky subory zo src adresara
+        "noEmit": true, // because our code is compiled by babel and webpack, we don't want the typescript compiler to produce any output
+        "isolatedModules": true,
