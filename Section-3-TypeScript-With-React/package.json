@@ -4,8 +4,9 @@
   "description": "xxx",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "build": "npm run ts-check && webpack --mode production",
+    "start": "webpack-dev-server --open --mode development",
+    "ts-check": "tsc"
   },
   "author": "",
   "license": "ISC",

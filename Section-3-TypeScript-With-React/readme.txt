@@ -55,4 +55,11 @@
 26. improve tsconfig.json:
          "include": ["./src/**/*"], // chcem kompilovat vsetky subory zo src adresara
         "noEmit": true, // because our code is compiled by babel and webpack, we don't want the typescript compiler to produce any output
-        "isolatedModules": true,
+        "isolatedModules": true, // exlanation: lecture 32, timing 6:59
+        "esModuleInterop": true, // before this option we did: import * as React from "react";
+                                // with this option: import React from "react";
+        "target": "esnext", // the latest features of ECMA script
+        "skipLibCheck": true, // bez tohoto nastavenie bude hadzat chyby, ze nevie najst neviem ake libky
+27. create "ts-check": "tsc" in package.json and run typescript compiler by it
+28. to be sure, we make typecheck before the build, improve script like:
+            "build": "npm run ts-check && webpack --mode production",
