@@ -75,3 +75,14 @@
 33. update .babelrc:
         "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
 34. now, as we use react and the entry file has .tsx, we have to change it in webpack.config.js
+
+ERROR HANDLING
+35. error line according to javascript, not to typescript. We would like to have error handling according to typescript (correct line number information)
+We can tell webpack to autogenerate the map, with which we will see the location of error directly at typescript file
+        index.js:line 10 ==> index.tsx:line 5
+                devtool: "eval-source-map",
+                we have correct error line number message info now:
+                Uncaught TypeError: window.hello is not a function
+                    at App (index.tsx?d986:5)
+36. improve tsconfig.json
+        "sourceMap": true, // include source maps into compiled code
