@@ -63,3 +63,15 @@
 27. create "ts-check": "tsc" in package.json and run typescript compiler by it
 28. to be sure, we make typecheck before the build, improve script like:
             "build": "npm run ts-check && webpack --mode production",
+
+29. Adding REACT to the project: -S we install then with normal dependencies (no -D development)
+            npm i -S react react-dom
+30. react does not include type definitions, so we have to include it: npm i -D @types/react @types/react-dom
+31. add to tsconfig.json:
+        "jsx": "preserve" -> keep jsx as is: <div/> ==> <div/>
+        "jsx": "react" -> transcript : <div/> ==> React.createElement('div')
+32. instal babel with react:
+    npm i -D @babel/preset-react
+33. update .babelrc:
+        "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
+34. now, as we use react and the entry file has .tsx, we have to change it in webpack.config.js
