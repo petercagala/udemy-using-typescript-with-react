@@ -86,3 +86,8 @@ We can tell webpack to autogenerate the map, with which we will see the location
                     at App (index.tsx?d986:5)
 36. improve tsconfig.json
         "sourceMap": true, // include source maps into compiled code
+
+JSON
+37. if we want to import json file, we need sttings in tsconfig.json
+            "moduleResolution": "Node",
+            "resolveJsonModule": true

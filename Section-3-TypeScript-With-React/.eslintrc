@@ -1,0 +1,58 @@
+{
+  "plugins": [
+    "prettier",
+    "simple-import-sort"
+  ],
+  "extends": [
+    "react-app",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "props": "always",
+        "children": "ignore"
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          "*/core-containers/",
+          "*/core-form/",
+          "*/core-helpers/",
+          "*/core-redux/",
+          "*/core-rich-widgets/",
+          "*/core-styles/",
+          "*/core-types/",
+          "*/core-widgets/"
+        ]
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "import/no-self-import": "error",
+    //    "import/no-default-export": "error",
+    "@typescript-eslint/no-redeclare": "off",
+    "@typescript-eslint/no-unused-vars": "off"
+  },
+  //  "overrides": [
+  //    {
+  //      "files": [
+  //        "*/api-packages//.ts",
+  //        "**/axiosInstance.ts"
+  //      ],
+  //      "rules": {
+  //        "import/no-default-export": "off"
+  //      }
+  //    }
+  //  ],
+  "ignorePatterns": [
+    "*/generated//.ts"
+  ]
+}
