@@ -91,3 +91,10 @@ JSON
 37. if we want to import json file, we need sttings in tsconfig.json
             "moduleResolution": "Node",
             "resolveJsonModule": true
+38. we have to tell webpack.config.json, how to handle css file:
+            add new rule {
+                                     test: /\.css$/,
+                                     loader: "css-loader"
+                                 }
+           npm i -D css-loader
+    To add the parssed css, we need to use plugin: npm i -D mini-css-extract-plugin

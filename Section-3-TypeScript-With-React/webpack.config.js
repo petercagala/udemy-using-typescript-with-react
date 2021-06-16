@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     entry: "./src/index.tsx",
     devtool: "eval-source-map",
@@ -10,6 +11,10 @@ module.exports = {
             test: /\.tsx?$/,
             loader: "babel-loader",
             exclude: /node_modules/,
+        },
+        {
+            test: /\.css$/,
+            use: [MiniCssExtractPlugin.loader, {loader: "css-loader"}],
         }],
     },
     plugins: [
@@ -17,5 +22,6 @@ module.exports = {
             template: "./src/index.html", // zdrojovy html subor v src (nemusi vobec mat v sebe odkaz na main.js)
             // filename: "indexXXX.html", // vysledny nazov suboru v dist !!! ak nebude index.html, nebude fungovat webpack-dev-server
         }),
+        new MiniCssExtractPlugin(),
     ],
   };
