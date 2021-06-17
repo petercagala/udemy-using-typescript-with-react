@@ -98,3 +98,17 @@ JSON
                                  }
            npm i -D css-loader
     To add the parssed css, we need to use plugin: npm i -D mini-css-extract-plugin
+39. enable css modules in webpack.config.js
+                            {
+                                loader: "css-loader",
+                                options: {
+                                    modules: true
+                                }
+                            }
+40. create custom.d.ts , because typescript does not know, how to import css file
+41. to better work with typescript and css modules, lets install
+                npm i -D typescript-plugin-css-modules
+                add to tsconfig.json
+                        "plugins": [{
+                          "name": "typescript-plugin-css-modules"
+                        }],
