@@ -112,3 +112,6 @@ JSON
                         "plugins": [{
                           "name": "typescript-plugin-css-modules"
                         }],
+42. importing SVG logo:
+            npm i -D @svgr/webpack
+
