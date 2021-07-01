@@ -14,6 +14,12 @@
     "plugins": [{
       "name": "typescript-plugin-css-modules"
     }],
+    "baseUrl": "./src",
+    "noErrorTruncation": true,
+    "importHelpers": true,
+    "paths": {
+      "core-styles" : ["core/core-styles"]
+    }
   },
   "include": ["./src/**/*"],
 }

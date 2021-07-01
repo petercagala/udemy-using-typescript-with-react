@@ -114,4 +114,6 @@ JSON
                         }],
 42. importing SVG logo:
             npm i -D @svgr/webpack
+43. add new rule in webpack.config.js:
+43. in custom.d.ts we have to define, how to read this svg file
 

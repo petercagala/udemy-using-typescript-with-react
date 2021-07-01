@@ -1,10 +1,16 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+var path = require("path");
+
 module.exports = {
     entry: "./src/index.tsx",
     devtool: "eval-source-map",
     resolve: {
-        extensions: [".js", ".ts", ".tsx"],
+        extensions: [".ts", ".tsx", ".js", ".json"],
+        alias: {
+            "core-styles": srcPath("core/core-styles"),
+        },
     },
     module: {
         rules: [{
@@ -22,7 +28,21 @@ module.exports = {
                     }
                 }
             ],
-        }],
+        },
+        { test: /\.svg$/, include: path.resolve(__dirname, "src/"), loader: "svg-react-loader" },
+        // {
+        //     test: /\.svg$/,
+        //     // loader: "@svgr/webpack",
+        //     loader: "svg-react-loader",
+        //     // options: {
+        //     //     svgoConfig: {
+        //     //         plugins: {
+        //     //             removeViewBox: false,
+        //     //         }
+        //     //     }
+        //     // }
+        //  }
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -31,4 +51,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin(),
     ],
-  };
+};
+
+function srcPath(subdir) {
+    return path.join(__dirname, "src", subdir);
+}

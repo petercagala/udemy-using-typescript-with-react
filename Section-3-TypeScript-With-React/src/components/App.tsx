@@ -1,3 +1,4 @@
+import {PizzaImg} from "core-styles";
 import React, {useMemo} from "react";
 import pizzasJson from "../data/pizza.json";
 import Pizza, {IPizza} from "./Pizza";
@@ -12,6 +13,7 @@ const App = () => {
 
     return (
         <div className={AppCss.container}>
+            <PizzaImg width={120} height={120}/>
             <ul>
                 {pizzas.map((pizza: IPizza) => {
                     return (
